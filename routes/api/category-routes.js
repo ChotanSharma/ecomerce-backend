@@ -33,18 +33,11 @@ router.get('/:id', (req, res) => {
             }
         ]
     })
-    .then(dbCategoryData => {
-        if(!dbCategoryData[0]) {
-            res.status(404).json({ message: "No category with this id"});
-            return;
-        }
-        res.json(dbCategoryData);
-    })
+    .then(dbCategoryData => dbCategoryData ? res.json(dbCategoryData) : res.json({message: 'no category found with this id.'}))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
-
 });
 
 router.post('/', (req, res) => {
@@ -67,18 +60,13 @@ router.put('/:id', (req, res) => {
             id: req.params.id
         }
     }) 
-    .then(dbCategoryData => {
-        if(!dbCategoryData[0]) {
-            res.status(404).json({ message: "No category with this id"});
-            return;
-        }
-        res.json(dbCategoryData);
-    })
+    .then(dbCategoryData => dbCategoryData ? res.json(dbCategoryData) : res.json({message: 'no category found with this id.'}))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
 });
+
 
 router.delete('/:id', (req, res) => {
     // delete a user by its `id` value
@@ -87,17 +75,12 @@ router.delete('/:id', (req, res) => {
               id: req.params.id
           }
       })  
-      .then(dbUserData => {
-          if(!dbUserData[0]) {
-              res.status(404).json({ message: "No user with this id"});
-              return;
-          }
-          res.json(dbUserData);
-      })
+      .then(dbCategoryData => dbCategoryData ? res.json(dbCategoryData) : res.json({message: 'no category found with this id.'}))
       .catch(err => {
           console.log(err);
           res.status(500).json(err);
       });
-  });
+});
+  
 
 module.exports = router;

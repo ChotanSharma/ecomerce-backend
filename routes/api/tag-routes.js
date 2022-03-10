@@ -35,18 +35,13 @@ router.get('/:id', (req, res) => {
           }
       ]
   })
-  .then(dbTagData => {
-      if(!dbTagData[0]) {
-          res.status(404).json({ message: "No Tag with this id"});
-          return;
-      }
-      res.json(dbTagData);
-  })
+  .then(dbTagData => dbTagData ? res.json(dbTagData) : res.json({message: 'no tag found with this id.'}))
   .catch(err => {
       console.log(err);
       res.status(500).json(err);
   });
 });
+
 
 router.post('/', (req, res) => {
   // create a new tag
@@ -67,17 +62,11 @@ router.put('/:id', (req, res) => {
         id: req.params.id
     }
 }) 
-    .then(dbTagData => {
-        if(!dbTagData[0]) {
-            res.status(404).json({ message: "No tag with this id"});
-            return;
-        }
-        res.json(dbTagData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+.then(dbTagData => dbTagData ? res.json(dbTagData) : res.json({message: 'no tag found with this id.'}))
+.catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
 });
 
 router.delete('/:id', (req, res) => {
@@ -87,17 +76,11 @@ router.delete('/:id', (req, res) => {
         id: req.params.id
    }
 })  
-    .then(dbTagData => {
-        if(!dbTagData[0]) {
-            res.status(404).json({ message: "No tag with this id"});
-            return;
-        }
-        res.json(dbTagData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+.then(dbTagData => dbTagData ? res.json(dbTagData) : res.json({message: 'no tag found with this id.'}))
+.catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+});
 });
 
 module.exports = router;
