@@ -35,27 +35,18 @@ router.get('/:id', (req, res) => {
         id: req.params.id
     },
     include: [
+          Category,
           {
-              model: Category,
-              attributes: ['id', 'category_name' ]
-          },
-          {
-              model: Tag,
-              attributes: ['id', 'tag_name']
+            model: Tag,
+            through: ProductTag
           }
       ]
   })
-  .then(dbProductData => {
-    if(!dbProductData[0]) {
-        res.status(404).json({ message: "No product with this id"});
-        return;
-    }
-    res.json(dbProductData);
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+  .then(dbProductData => dbProductData ? res.json(dbProductData) : res.json({message: 'Item not in store.'}))
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
 });
 
 // create new product
