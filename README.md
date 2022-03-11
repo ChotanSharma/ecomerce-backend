@@ -13,7 +13,6 @@ SO THAT my company can compete with other e-commerce companies.
 * [Usage](#usage)
 * [License](#license)
 * [Contributor](#contributor)
-* [Assets](#assets)
 * [Contact](#contact)
 
 ## Description
@@ -23,13 +22,11 @@ To run this application, the users need to download node modules as well as mysq
 ## Usage 
 If a user clones the repo and install the necessary modules, the user only needs to do "npm start" on the command line. Then the app will be ready with the json data. The users can get associated data relationship established by sequalize tables association. All the necessary data are seeded; so optimum use of the app depends on the seeded data.
 
-Link to deployed app on [Heroku](https://peaceful-fortress-82620.herokuapp.com/)
+View thw video for get routes: [Screencastify](https://drive.google.com/file/d/1GT4Va27B0sFWzPb6sjoMIpgYSCjCkyoT/view)
 
-View thw video for get routes: [Screencastify]
+View thw video for get routes for one category, one tag and one product: [Screencastify](https://drive.google.com/file/d/1NYsoC4TRcfbRYX8_4V3ubCrHxsOJHHP2/view)
 
-View thw video for get routes: [Screencastify]
-
-View thw video for get routes: [Screencastify]
+View thw video for delete, post and put of categoriesRoutes: [Screencastify](https://drive.google.com/file/d/1hjvrTx8jrPkcAA3sEHMtdhPFBS32zDuq/view)
 
 ## License 
 This project is license under MIT
@@ -37,8 +34,5 @@ This project is license under MIT
 Made with ❤️ by Chotan Sharma
 
  Codes Contributor: Xandromus (Xander Rapstine) and dependabot[bot].
-## Assets
-![screenshot]()
-![screenshot]()
 ## Contact
 Please  feel easy to contact me at chotansharma@yahoo.com. For more of my projects, you are always welcome to my portfolio at https://github.com/ChotanSharma.
